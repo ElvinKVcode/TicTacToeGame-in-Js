@@ -10,21 +10,19 @@ let gameBoard = ["", "", "", "", "", "", "", "", ""];
 cells.forEach((cell) => {
   cell.addEventListener("click", () => handleCellClick(cell));
   // Oyun bitdikdən sora random olaq bir xana secir ve X sı  ora əlavə edir
-  cell.addEventListener("click", function () {
-    handleCellClick(this);
-  });
+  // cell.addEventListener("click", function () {
+  //   handleCellClick(this);
+  // });
 });
 
 // Oyunu sıfırlayan funksiya yazırıq
 function resetGame() {
-    // Oyun qutusunu təmizləyirik
-    gameBoard = ["", "", "", "", "", "", "", "", ""];
-    // Xanaların içindəkini təmizləyirik
-    cells.forEach((cell) => (cell.textContent = ""));
-    // Başlanğıc oyunçunu təyin edirik burda
-    currentPlayer = "X";
-  }
-  
+  // Oyun qutusunu təmizləyirik
+  gameBoard = ["", "", "", "", "", "", "", "", ""];
+  // Xanaların içindəkini təmizləyirik
+  cells.forEach((cell) => (cell.textContent = ""));
+}
+
 // Reset düyməsinə kliklənəndə işləyəcək funksiyanı təyin edir
 resetButton.addEventListener("click", resetGame);
 
@@ -92,5 +90,3 @@ function checkWin() {
   // Qalib yoxdursa false qaytarır
   return false;
 }
-
-
